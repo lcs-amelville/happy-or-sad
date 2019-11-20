@@ -30,10 +30,23 @@ class ViewController: UIViewController {
     
     @IBAction func analyzeText(_ sender: Any) {
         
-        
-        
+        //guard against no input
+        guard let phraseInput = phraseInputField.text, phraseInput.count > 0 else {
+            outputResults.text = "please enter a value"
+            return
+        }
+            
+            
+            
+            
     }
     
     
 }
+
+
+
+
+
+
 
