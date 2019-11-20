@@ -27,15 +27,23 @@ class ViewController: UIViewController {
     }
 
     //Analyze the text provided
-    
     @IBAction func analyzeText(_ sender: Any) {
+        
+        
+        //Clear the label results
+        outputResults.text = ""
+        
         
         //guard against no input
         guard let phraseInput = phraseInputField.text, phraseInput.count > 0 else {
             outputResults.text = "please enter a value"
             return
         }
-            
+        //make sure inpit isn't to long
+        if phraseInput.count > 255 {
+            outputResults.text = "Please enter a phrase with less that 255 characters"
+            return
+        }
             
             
             
