@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     //Mark: Propertys
     //Make Outlets
     
@@ -23,12 +23,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+     
+        
         // Do any additional setup after loading the view.
     }
-
+    
     //Analyze the text provided
     @IBAction func analyzeText(_ sender: Any) {
         
+        var happyNumber = 0
+        var sadNumber = 0
         
         //Clear the label results
         outputResults.text = ""
@@ -44,9 +50,33 @@ class ViewController: UIViewController {
             outputResults.text = "Please enter a phrase with less that 255 characters"
             return
         }
+        
+        
+        let happyBois = "😀😃😄😁😆😅😂🤣☺️😊🙂😌😋😛😝😜😚😍🥰😘😗😙🤪🤩🥳"
+        let sadBois = "😒😞😔😟😕🙁☹️😣😖😫😩🥺😢😭😨😰😥😓😪😿"
+        
+        for characters in phraseInput {
+            if happyBois.contains(character){
+                happyNumber = happyNumber + 1
+            }
+        }
+        
+        for chracter in phraseInput {
+            if sadBois.contains(character) {
+                sadNumber = sadNumber + 1
             
-            
-            
+        }
+        
+        
+        
+            if happyNumber > sadNumber {
+                outputResults.text = " you are happy"
+            }else if sadNumber > happyNumber {
+                outputResults.text = "you are sad"
+            }else {
+                outputResults.text = "we can't say?"
+            }
+        
     }
     
     
@@ -58,3 +88,4 @@ class ViewController: UIViewController {
 
 
 
+}
