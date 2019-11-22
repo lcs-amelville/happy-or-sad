@@ -46,23 +46,23 @@ class ViewController: UIViewController {
             return
         }
         //make sure inpit isn't to long
-        if phraseInput.count > 255 {
+        if phraseInput.count > 256 {
             outputResults.text = "Please enter a phrase with less that 255 characters"
             return
         }
         
         
         let happyBois = "😀😃😄😁😆😅😂🤣☺️😊🙂😌😋😛😝😜😚😍🥰😘😗😙🤪🤩🥳"
-        let sadBois = "😒😞😔😟😕🙁☹️😣😖😫😩🥺😢😭😨😰😥😓😪😿"
+        let sadBois = "😒😞😔😟😕🙁☹️😣😖😫😩🥺😢😭😨😰😥😓😪😿☹️"
         
         for characters in phraseInput {
-            if happyBois.contains(character){
+            if happyBois.contains(characters){
                 happyNumber = happyNumber + 1
             }
         }
         
-        for chracter in phraseInput {
-            if sadBois.contains(character) {
+        for characters in phraseInput {
+            if sadBois.contains(characters) {
                 sadNumber = sadNumber + 1
             
         }
