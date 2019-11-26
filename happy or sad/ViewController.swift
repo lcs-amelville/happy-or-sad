@@ -33,6 +33,8 @@ class ViewController: UIViewController {
     //Analyze the text provided
     @IBAction func analyzeText(_ sender: Any) {
         
+        // the number of happy and sad emojis
+        
         var happyNumber = 0
         var sadNumber = 0
         
@@ -51,9 +53,11 @@ class ViewController: UIViewController {
             return
         }
         
-        
+        // happy and sad constants
         let happyBois = "😀😃😄😁😆😅😂🤣☺️😊🙂😌😋😛😝😜😚😍🥰😘😗😙🤪🤩🥳"
         let sadBois = "😒😞😔😟😕🙁☹️😣😖😫😩🥺😢😭😨😰😥😓😪😿☹️"
+        
+        //figure out if the message is happy or sad
         
         for characters in phraseInput {
             if happyBois.contains(characters){
@@ -68,7 +72,7 @@ class ViewController: UIViewController {
         }
         
         
-        
+        //tell the label what to say
             if happyNumber > sadNumber {
                 outputResults.text = " you are happy"
             }else if sadNumber > happyNumber {
