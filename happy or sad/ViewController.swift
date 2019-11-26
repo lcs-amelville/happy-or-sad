@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-     
+        
         
         // Do any additional setup after loading the view.
     }
@@ -68,11 +68,11 @@ class ViewController: UIViewController {
         for characters in phraseInput {
             if sadBois.contains(characters) {
                 sadNumber = sadNumber + 1
+                
+            }
             
-        }
-        
-        
-        //tell the label what to say
+            
+            //tell the label what to say
             if happyNumber > sadNumber {
                 outputResults.text = " you are happy"
             }else if sadNumber > happyNumber {
@@ -80,16 +80,16 @@ class ViewController: UIViewController {
             }else {
                 outputResults.text = "we can't say?"
             }
+            
+        }
+        
         
     }
     
     
-}
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
 }
